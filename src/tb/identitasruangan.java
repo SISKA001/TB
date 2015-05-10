@@ -12,7 +12,7 @@ package tb;
  *
  * @author Asus
  */
-public class identitasruangan {
+public abstract class identitasruangan {
     private int kode_ruangan;
     private int lokasi_ruangan;
     private String program_study;
@@ -56,5 +56,5 @@ public class identitasruangan {
         setprogram_study(p);
         setfakultas(f);
      }
-     
+     abstract void analisis();
 }
