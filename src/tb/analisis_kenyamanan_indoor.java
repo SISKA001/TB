@@ -24,16 +24,7 @@ public class analisis_kenyamanan_indoor {
     
     public void setsirkuit_udara (String sirkuit_udara){
         this.sirkuit_udara = sirkuit_udara;
-        String SU = scan.nextLine();
-        if("Baik".equals(SU)){
-            System.out.println("Sesuai Kriteria");
-            return;}
-        else if("Buruk".equals(SU)){
-            System.out.println("Kondisi Tidak Sesuai Kriteria");
-            return
-        else
-            System.out.println("Inputan Salah");
-    }
+        }
      public String getsirkuit_udara(){
             return this.sirkuit_udara;
         }
@@ -45,27 +36,13 @@ public class analisis_kenyamanan_indoor {
         }
       public void setkelembapan (String kelembapan){
         this.kelembapan= kelembapan;
-        String KLP = scan.nextLine();
-        if("Baik".equals(KLP))
-              System.out.println("Kelembapan Ruanagan Baik");
-        else if("Buruk".equals(KLP))
-              System.out.println("Kelembapan Ruangan Buruk");
-        else
-              System.out.println("Inputan Salah");
-    }
+         }
      public String getkelembapan(){
             return this.kelembapan;
         }
       public void setsuhu_ruangan (int suhu_ruangan){
         this.suhu_ruangan = suhu_ruangan;
-        String SR = scan.nextLine();
-        if("Baik".equals(SR))
-              System.out.println("Suhu Ruangan Baik ");
-        else if("Buruk".equals(SR))
-              System.out.println("Suhu Ruangan Buruk");
-        else
-              System.out.println("Inputan Salah");
-    }
+        }
      public int getsuhu_ruangan(){
             return this.suhu_ruangan;
         }
