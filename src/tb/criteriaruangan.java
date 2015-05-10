@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Asus
  */
-public class criteriaruangan {
+public abstract class criteriaruangan {
     
     private int panjang_ruangan;
     private int lebar_ruangan;
@@ -44,38 +44,19 @@ public void setpanjan_ruangan (int panjang_ruangan){
         }
       public void setjumlah_cendela (int jumlah_cendela){
         this.jumlah_cendela = jumlah_cendela;
-         if (jumlah_cendela >=4){
-             System.out.println("sesuai kriteria");
-         }
-         else if(jumlah_cendela <4){
-             System.out.println("tidak sesuai kriteria");
-         }
     }
      public int getjumlahcendela(){
             return this.jumlah_cendela;
         }
       public void setjumlah_pintu (int jumlah_pintu){
         this.jumlah_pintu = jumlah_pintu;
-         if (jumlah_pintu >= 2){
-             System.out.println("sesuai..");
-         }
-             else if(jumlah_pintu <2){
-                 System.out.println("tidak sesuai");
-                     
-             }
-    }
+        }
      public int getjumlah_pintu(){
             return this.jumlah_pintu;
         }
       public void setjumlah_papantulis(int jumlah_papantulis){
         this.jumlah_papantulis= jumlah_papantulis;
-         if(jumlah_papantulis >=3){
-             System.out.println("sesuai kriteria..");
-         }
-         else if (jumlah_papantulis <3){
-             System.out.println("tidak sesuai kriteria");
-         }
-    }
+        }
      public int getjumlah_papan_tulis(){
             return this.jumlah_papantulis;
         }
@@ -110,20 +91,22 @@ public void setpanjan_ruangan (int panjang_ruangan){
          }
          System.out.println("rasio luas ="+ rasioluas);
          return rasioluas;
-         }      
-
-    //void setpanjang_ruangan(int nextInt) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
-
-    //void setlebar_ruanga(int nextInt) {
-      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
-
-    //void setjumlah_jendela(int nextInt) {
-      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    //}
+         }   
+     String jumlahPeralatan (int jumlah_kursi,int jumlah_cendela, int jumlah_pintu, int jumlah_papantulis){
+         if(jumlah_kursi >=40 && jumlah_cendela >=4 && jumlah_pintu <=1 && jumlah_papantulis >=3){
+             return "Sesuai";
+         }
+         else if(jumlah_kursi <40 && jumlah_cendela <4 && jumlah_pintu >1 && jumlah_papantulis <3){
+             return "Tidak Sesuai";
+         }
+         else{
+             return "Inputan Salah";
+         }
+         
      }
+     abstract void analisis();
+     }
+
      
          
          
