@@ -18,6 +18,24 @@ public abstract class identitasruangan {
     private String program_study;
     private String fakultas;
     
+    //construrtor, yaitu sebuah nama method yg sama dgn nama class.
+    void identitasruangan(int kode_ruangan, int lokasi_ruangan, String program_study, String fakultas){
+        this.kode_ruangan=kode_ruangan;
+        this.lokasi_ruangan=lokasi_ruangan;
+        this.program_study=program_study;
+        this.fakultas=fakultas;
+    }
+    // overloading nama method yang sama
+    void setdata(int kode_ruangan, int lokasi_ruangan){
+        this.kode_ruangan=kode_ruangan;
+        this.lokasi_ruangan=lokasi_ruangan;
+    }
+    void setdata(int kode_ruangan, int lokasi_ruangan, String program_study, String fakultas){
+        this.kode_ruangan=kode_ruangan;
+        this.lokasi_ruangan=lokasi_ruangan;
+        this.program_study=program_study;
+        this.fakultas=fakultas;
+    }
     public void setfakultas (String fakultas){
         this.fakultas = fakultas;
     }
@@ -44,17 +62,18 @@ public abstract class identitasruangan {
      public String getprogram_study(){
             return this.program_study;
         }
-     public void tampilanruangan(){
+     void identitas(){
          System.out.println("Kode Ruangan :"+getkode_ruangan());
          System.out.println("Lokasi Ruangan :"+getlokasi_ruangan());
          System.out.println("Program Study :"+getprogram_study());
-         System.out.println("Fakultas :"+getfakultas ());
+        // System.out.println("Fakultas :"+getfakultas ());
      }
+     
      public void inputdata(int l,int kr, String p, String f){
         setkode_ruangan(kr);
         setlokasi_ruangan(l);
         setprogram_study(p);
         setfakultas(f);
      }
-     abstract void analisis();
+     //abstract void analisis();
 }
