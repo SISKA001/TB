@@ -13,13 +13,14 @@ import java.util.Scanner;
  *
  * @author Asus
  */
-public abstract class analisis_outdoor {
+public class analisis_outdoor extends identitasruangan{
      private String kebisingan_ruangan;
     private String bau;
     private String kebocora_ruangan;
     private String kebersihan_ruangan;
     private String keausan;
-    
+
+   
     
             
      public void setkebisingan_ruangan (String kebisingan_ruangan){
@@ -61,6 +62,7 @@ public abstract class analisis_outdoor {
          }
      }
      String bau (String bau){
+     
          if("Tidak Ada Bau".equals(bau)){
              return "Sesuai";
          }
@@ -84,7 +86,9 @@ public abstract class analisis_outdoor {
              return "Tidak Sesuai";
          }
      }
+     
     String keausan (String keausan){
+        
         if("Baik".equals(keausan)){
             return "Sesuai";
         }
@@ -92,6 +96,11 @@ public abstract class analisis_outdoor {
             return "Tidak Sesuai";
         }
     } 
-    abstract void analisis();
+    @Override
+     void identitas(){
+         System.out.println("Kode Ruangan :"+getkode_ruangan());
+         System.out.println("Lokasi Ruangan :"+getlokasi_ruangan());
+     }
+   
+    }
      
-}
