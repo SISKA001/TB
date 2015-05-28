@@ -13,7 +13,7 @@ import java.util.Scanner;
  *
  * @author Asus
  */
-public abstract class analisis_kenyamanan_indoor {
+public class analisis_kenyamanan_indoor extends identitasruangan{
 
     //public static void main(String[] args){
 
@@ -23,6 +23,8 @@ public abstract class analisis_kenyamanan_indoor {
     private int suhu_ruangan;
 
     Scanner scan = new Scanner(System.in);
+
+ 
 
     public void setsirkuit_udara(String sirkuit_udara) {
         this.sirkuit_udara = sirkuit_udara;
@@ -55,7 +57,7 @@ public abstract class analisis_kenyamanan_indoor {
     public int getsuhu_ruangan() {
         return this.suhu_ruangan;
     }
-
+   
     String sirkuit_udara(String sirkuit_udara) {
         if ("lancar".equals(sirkuit_udara)) {
             return "Sesuai";
@@ -86,8 +88,15 @@ public abstract class analisis_kenyamanan_indoor {
         } else {
             return "Tidak Sesuai";
         }
+        
+    }
+    @Override
+        void identitas(){
+            System.out.println("Kode Ruangan :"+getkode_ruangan());
+         System.out.println("Lokasi Ruangan :"+getlokasi_ruangan());
+        }
     }
 
-    abstract void analisis();
+    //abstract void analisis();
 
-}
+
