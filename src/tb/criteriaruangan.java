@@ -13,101 +13,71 @@ import java.util.Scanner;
  *
  * @author Asus
  */
-public abstract class criteriaruangan {
+public abstract class identitasruangan {
+    private int kode_ruangan;
+    private int lokasi_ruangan;
+    private String program_study;
+    private String fakultas;
     
-    private int panjang_ruangan;
-    private int lebar_ruangan;
-    private int jumlah_kursi;
-    private int jumlah_cendela;
-    private int jumlah_pintu;
-    private int jumlah_papantulis;
-    private double luasruangan, rasioluas;
-
-public void setpanjan_ruangan (int panjang_ruangan){
-    this.panjang_ruangan = panjang_ruangan;
-}    
+    //construrtor, yaitu sebuah nama method yg sama dgn nama class.
+    void identitasruangan(int kode_ruangan, int lokasi_ruangan, String program_study, String fakultas){
+        this.kode_ruangan=kode_ruangan;
+        this.lokasi_ruangan=lokasi_ruangan;
+        this.program_study=program_study;
+        this.fakultas=fakultas;
+    }
+    // overloading nama method yang sama
+    void setdata(int kode_ruangan, int lokasi_ruangan){
+        this.kode_ruangan=kode_ruangan;
+        this.lokasi_ruangan=lokasi_ruangan;
+    }
+    void setdata(int kode_ruangan, int lokasi_ruangan, String program_study, String fakultas){
+        this.kode_ruangan=kode_ruangan;
+        this.lokasi_ruangan=lokasi_ruangan;
+        this.program_study=program_study;
+        this.fakultas=fakultas;
+    }
+    public void setfakultas (String fakultas){
+        this.fakultas = fakultas;
+    }
+    public String getfakultas (){
+        return this.fakultas;
+    }
     
-    public int getpanjang_ruangan(){
-        return this.panjang_ruangan;
-        }
-      public void setlebar_ruangan (int lebar_ruangan){
-        this.lebar_ruangan = lebar_ruangan;
+    public void setkode_ruangan (int kode_ruangan){
+        this.kode_ruangan= kode_ruangan;
     }
-     public int getlebar_ruangan(){
-            return this.lebar_ruangan;
+     public int getkode_ruangan(){
+            return this.kode_ruangan;
         }
-      public void setjumlah_kursi (int jumlah_kursi){
-        this.jumlah_kursi = jumlah_kursi;
+     public void setlokasi_ruangan (int lokasi_ruangan){
+        this.lokasi_ruangan= lokasi_ruangan;
     }
-     public int getjumlah_kursi(){
-            return this.jumlah_kursi;
+     public int getlokasi_ruangan(){
+            return this.lokasi_ruangan;
         }
-      public void setjumlah_cendela (int jumlah_cendela){
-        this.jumlah_cendela = jumlah_cendela;
+    public void setprogram_study(String program_study){
+       this.program_study = program_study;
+        
     }
-     public int getjumlahcendela(){
-            return this.jumlah_cendela;
+     public String getprogram_study(){
+            return this.program_study;
         }
-      public void setjumlah_pintu (int jumlah_pintu){
-        this.jumlah_pintu = jumlah_pintu;
-        }
-     public int getjumlah_pintu(){
-            return this.jumlah_pintu;
-        }
-      public void setjumlah_papantulis(int jumlah_papantulis){
-        this.jumlah_papantulis= jumlah_papantulis;
-        }
-     public int getjumlah_papan_tulis(){
-            return this.jumlah_papantulis;
-        }
-     public void setrasioluas (double rasioluas){
-         this.rasioluas = rasioluas;
-     }
-     public double getrasioluas(){
-         return this.rasioluas;
-     }
-     public void setluasruangan (double luasruangan){
-        this.luasruangan = luasruangan;
-     }
-     public double getluasruangan(){
-         return this.luasruangan;
-     
-     }
-     Scanner scan = new Scanner (System.in);
-     
-     double hitungluasruangan (int panjangruangan, int lebarruangan){
-         luasruangan = panjang_ruangan * lebar_ruangan;
-         System.out.println("jadi luas ruangan = ");
-         return luasruangan;
+     void identitas(){
+         System.out.println("Kode Ruangan :"+getkode_ruangan());
+         System.out.println("Lokasi Ruangan :"+getlokasi_ruangan());
+         System.out.println("Program Study :"+getprogram_study());
+        // System.out.println("Fakultas :"+getfakultas ());
      }
      
-     double hitungrasioluas (double luasruangan, int jumlah_kursi){
-         rasioluas = luasruangan / jumlah_kursi;
-         if(rasioluas >= 0.5){
-             System.out.println("sesuai..");
-         }
-         else if (rasioluas <= 0.5){
-             System.out.println("tidak sesuai");
-         }
-         System.out.println("rasio luas ="+ rasioluas);
-         return rasioluas;
-         }   
-     String jumlahPeralatan (int jumlah_kursi,int jumlah_cendela, int jumlah_pintu, int jumlah_papantulis){
-         if(jumlah_kursi >=40 && jumlah_cendela >=4 && jumlah_pintu <=1 && jumlah_papantulis >=3){
-             return "Sesuai";
-         }
-         else if(jumlah_kursi <40 && jumlah_cendela <4 && jumlah_pintu >1 && jumlah_papantulis <3){
-             return "Tidak Sesuai";
-         }
-         else{
-             return "Inputan Salah";
-         }
-         
+     public void inputdata(int l,int kr, String p, String f){
+        setkode_ruangan(kr);
+        setlokasi_ruangan(l);
+        setprogram_study(p);
+        setfakultas(f);
      }
-     abstract void analisis();
-     }
-
-     
+     //abstract void analisis();
+} 
          
          
              
