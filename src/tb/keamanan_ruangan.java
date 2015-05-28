@@ -13,11 +13,19 @@ import java.util.Scanner;
  *
  * @author Asus
  */
-public abstract class keamanan_ruangan {
+public abstract class keamanan_ruangan extends identitasruangan{
     private String kekokohan_ruangan;
     private String keamanan_kunci_cendela;
     private String keamanan_LCD;
     private String keamanan_kuncipintu;
+    
+    public keamanan_ruangan(String kekokohan_ruangan, String keamanan_kunci_cendela, String keamanan_LCD, String keamanan_kuncipintu){
+        this.kekokohan_ruangan=kekokohan_ruangan;
+        this.keamanan_kunci_cendela=keamanan_kunci_cendela;
+        this.keamanan_LCD=keamanan_LCD;
+        this.keamanan_kuncipintu=keamanan_kuncipintu;
+        
+    }
     
       public void setkekokohan_ruangan (String kekokohan_ruangan){
         this.kekokohan_ruangan = kekokohan_ruangan;
@@ -73,6 +81,20 @@ public abstract class keamanan_ruangan {
          else{
              return "inputan Salah"; 
      }}
-     abstract void analisis();
-}
-
+     void setdata(String kekokohan_ruangan, String keamanan_kunci_cendela){
+         this.kekokohan_ruangan=kekokohan_ruangan;
+         this.keamanan_kunci_cendela=keamanan_kunci_cendela;
+         
+     }
+     void setdata(String kekokohan_ruangan, String keamanan_kunci_cendela, String keamanan_LCD, String keamanan_kuncipintu){
+         this.kekokohan_ruangan=kekokohan_ruangan;
+         this.keamanan_kunci_cendela=keamanan_kunci_cendela;
+         this.keamanan_LCD=keamanan_LCD;
+         this.keamanan_kuncipintu=keamanan_kuncipintu;
+     }
+     @Override
+      void identitas(){
+         System.out.println("Kode Ruangan :"+getkode_ruangan());
+         System.out.println("Lokasi Ruangan :"+getlokasi_ruangan());
+    // abstract void analisis();
+}}
