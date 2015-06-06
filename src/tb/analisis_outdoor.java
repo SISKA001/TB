@@ -97,10 +97,12 @@ public class analisis_outdoor extends identitasruangan{
         }
     } 
     @Override
-     void identitas(){
+     String identitas(){
          System.out.println("Kode Ruangan :"+getkode_ruangan());
          System.out.println("Lokasi Ruangan :"+getlokasi_ruangan());
+         return null;
      }
    
     }
      
+
